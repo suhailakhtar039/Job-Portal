@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.Optional;
 
 @Service
 public class UsersService {
@@ -23,4 +24,7 @@ public class UsersService {
         return usersRepository.save(users);
     }
 
+    public Optional<Users> getUserByEmail(String email){
+        return usersRepository.findByEmail(email);
+    }
 }
