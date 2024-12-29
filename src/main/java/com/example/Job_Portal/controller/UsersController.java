@@ -2,6 +2,7 @@ package com.example.Job_Portal.controller;
 
 import com.example.Job_Portal.entity.Users;
 import com.example.Job_Portal.entity.UsersType;
+import com.example.Job_Portal.services.UsersService;
 import com.example.Job_Portal.services.UsersTypeService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +16,12 @@ import java.util.List;
 @Controller
 public class UsersController {
     private final UsersTypeService usersTypeService;
+    private final UsersService usersService;
 
     @Autowired
-    public UsersController(UsersTypeService usersTypeService) {
+    public UsersController(UsersTypeService usersTypeService, UsersService usersService) {
         this.usersTypeService = usersTypeService;
+        this.usersService = usersService;
     }
 
     @GetMapping("/register")
