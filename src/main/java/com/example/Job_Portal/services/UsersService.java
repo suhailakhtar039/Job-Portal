@@ -1,8 +1,11 @@
 package com.example.Job_Portal.services;
 
+import com.example.Job_Portal.entity.Users;
 import com.example.Job_Portal.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
 
 @Service
 public class UsersService {
@@ -14,6 +17,10 @@ public class UsersService {
         this.usersRepository = usersRepository;
     }
 
-
+    public Users addNew(Users users){
+        users.setActive(true);
+        users.setRegistrationDate(new Date(System.currentTimeMillis()));
+        return usersRepository.save(users);
+    }
 
 }
