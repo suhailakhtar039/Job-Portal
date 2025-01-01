@@ -43,6 +43,90 @@ public class RecruiterProfile {
         this.state = state;
     }
 
+    public int getUserAccountId() {
+        return userAccountId;
+    }
 
+    public void setUserAccountId(int userAccountId) {
+        this.userAccountId = userAccountId;
+    }
 
+    public Users getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Users userId) {
+        this.userId = userId;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getProfilePhoto() {
+        return profilePhoto;
+    }
+
+    public void setProfilePhoto(String profilePhoto) {
+        this.profilePhoto = profilePhoto;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    @Override
+    public String toString() {
+        return "RecruiterProfile{" +
+                "userAccountId=" + userAccountId +
+                ", userId=" + userId +
+                ", city='" + city + '\'' +
+                ", company='" + company + '\'' +
+                ", country='" + country + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", profilePhoto='" + profilePhoto + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
 }
