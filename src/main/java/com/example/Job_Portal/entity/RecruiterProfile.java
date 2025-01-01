@@ -29,4 +29,20 @@ public class RecruiterProfile {
 
     private String state;
 
+    public RecruiterProfile() {}
+
+    public RecruiterProfile(int userAccountId, Users userId, String city, String company, String country, String firstName, String lastName, String profilePhoto, String state) {
+        this.userAccountId = userAccountId;
+        this.userId = userId;
+        this.city = city;
+        this.company = company;
+        this.country = country;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.profilePhoto = profilePhoto;
+        this.state = state;
+    }
+
+
+
 }
