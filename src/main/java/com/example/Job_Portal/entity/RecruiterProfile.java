@@ -1,13 +1,18 @@
 package com.example.Job_Portal.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "recruiter_profile")
 public class RecruiterProfile {
 
+    @Id
     private int userAccountId;
+
+    @OneToOne
+    @JoinColumn(name = "user_account_id")
+    @MapsId
+    private Users userId;
 
     private String city;
 
@@ -19,6 +24,7 @@ public class RecruiterProfile {
 
     private String lastName;
 
+    @Column(nullable = true, length = 64)
     private String profilePhoto;
 
     private String state;
