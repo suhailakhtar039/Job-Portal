@@ -1,6 +1,7 @@
 package com.example.Job_Portal.services;
 
 import com.example.Job_Portal.entity.JobSeekerProfile;
+import com.example.Job_Portal.entity.RecruiterProfile;
 import com.example.Job_Portal.entity.Users;
 import com.example.Job_Portal.repository.JobSeekerProfileRepository;
 import com.example.Job_Portal.repository.RecruiterProfileRepository;
@@ -29,7 +30,13 @@ public class UsersService {
         users.setActive(true);
         users.setRegistrationDate(new Date(System.currentTimeMillis()));
         int userTypeId = users.getUserTypeId().getUserTypeId();
-        return usersRepository.save(users);
+        users = usersRepository.save(users);
+        if(userTypeId == 1){
+            recruiterProfileRepository.save(new RecruiterProfile(users));
+        } else{
+            jobSeekerProfileRepository.save(new JobSeekerProfile(users));
+        }
+        return users;
     }
 
     public Optional<Users> getUserByEmail(String email){

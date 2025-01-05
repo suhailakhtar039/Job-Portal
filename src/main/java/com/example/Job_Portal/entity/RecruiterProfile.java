@@ -43,6 +43,10 @@ public class RecruiterProfile {
         this.state = state;
     }
 
+    public RecruiterProfile(Users userId) {
+        this.userId = userId;
+    }
+
     public int getUserAccountId() {
         return userAccountId;
     }
