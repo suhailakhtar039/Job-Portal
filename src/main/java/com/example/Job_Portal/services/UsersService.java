@@ -30,13 +30,13 @@ public class UsersService {
         users.setActive(true);
         users.setRegistrationDate(new Date(System.currentTimeMillis()));
         int userTypeId = users.getUserTypeId().getUserTypeId();
-        users = usersRepository.save(users);
+        Users savedUsers = usersRepository.save(users);
         if(userTypeId == 1){
-            recruiterProfileRepository.save(new RecruiterProfile(users));
+            recruiterProfileRepository.save(new RecruiterProfile(savedUsers));
         } else{
-            jobSeekerProfileRepository.save(new JobSeekerProfile(users));
+            jobSeekerProfileRepository.save(new JobSeekerProfile(savedUsers));
         }
-        return users;
+        return savedUsers;
     }
 
     public Optional<Users> getUserByEmail(String email){
