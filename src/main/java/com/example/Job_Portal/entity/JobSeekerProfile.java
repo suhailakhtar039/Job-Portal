@@ -34,6 +34,7 @@ public class JobSeekerProfile {
 
     private String workAuthorization;
 
+    @OneToMany(targetEntity = Skills.class, cascade = CascadeType.ALL, mappedBy = "jobSeekerProfile")
     private List<Skills> skills;
 
     public JobSeekerProfile() {
